@@ -1,51 +1,13 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Params.languageTag | default "en-US" }}">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Title }}</title>
-    <!-- Подключение библиотеки Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Подключение ваших собственных стилей -->
-    <link rel="stylesheet" href="/assets/scss/common/_custom.scss">
-    <style>
-        .container {
-          display: flex;
-          width: 100%;
-          justify-content: space-between;
-        }
-        .sidebar-left,
-        .sidebar-right {
-          background-color: #f4f4f4;
-          padding: 20px;
-          flex: 1;
-        }
-        .main-content {
-          background-color: #fff;
-          padding: 20px;
-          flex: 4;
-        }
-    </style>
-    <!-- Подключение emailConfirmation.js -->
-    <script src="/js/emailConfirmation.js" defer></script>
+    <title>Document</title>
+    <!-- Подключение вашего скрипта -->
+    <script src="/assets/js/emailConfirmation.js" defer></script>
 </head>
-<body class="{{ if .Site.Params.darkMode }}data-dark-mode{{ end }}">
-<div class="container">
-    <aside class="sidebar-left">
-        <!-- Левое меню -->
-    </aside>
-    <main class="main-content">
-        <!-- Основное содержимое -->
-        {{ partial "getstarted.html" . }}
-    </main>
-    <aside class="sidebar-right">
-        <!-- Правое меню -->
-    </aside>
-</div>
-
-<!-- Подключение скриптов -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.0/js/lightbox.js"></script>
+<body>
+<!-- Ваше содержимое -->
 </body>
 </html>

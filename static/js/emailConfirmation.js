@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
+  console.log('DOM fully loaded and parsed'); // Проверка загрузки DOM
+
   // Функция для извлечения токена подтверждения из URL
   function getTokenFromHash() {
     const hash = window.location.hash.substring(1);
@@ -8,11 +10,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Функция для подтверждения электронной почты
   function confirmEmail(token) {
+    console.log('Token received for confirmation:', token); // Проверка получения токена
     fetch(`https://api.netlify.com/api/v1/verify/${token}`, {
       method: 'POST',
     })
     .then(response => response.json())
     .then(data => {
+      console.log('Response data:', data); // Проверка данных ответа
       if (data && data.status === 'confirmed') {
         alert('Email confirmed successfully!');
         // Перенаправление на главную страницу или другую страницу
@@ -29,7 +33,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Извлечение токена и подтверждение электронной почты
   const token = getTokenFromHash();
+  console.log('Confirmation token:', token); // Проверка извлечения токена
   if (token) {
     confirmEmail(token);
+  } else {
+    console.log('No token found in URL');
   }
 });
