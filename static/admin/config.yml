@@ -1,17 +1,38 @@
 backend:
   name: git-gateway
-  branch: main  # укажите основную ветку вашего репозитория
+  branch: main
 
-media_folder: "static/images/uploads"  # папка для загрузки медиа-файлов
-public_folder: "/images/uploads"  # публичный путь к медиа-файлам
+media_folder: "static/uploads" # Папка для загрузки медиафайлов
+public_folder: "/uploads" # Публичная папка для медиафайлов
 
 collections:
-  - name: "blog"  # идентификатор коллекции
-    label: "Blog"  # метка коллекции
-    folder: "content/blog"  # папка для контента
-    create: true  # разрешить создание новых записей
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:  # поля коллекции
+  - name: "englishDocs"
+    label: "English Docs"
+    folder: "content/en/docs"
+    create: true
+    nested: true
+    fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Sub-Section", name: "sub_section", widget: "object", fields: [
+        { label: "Title", name: "title", widget: "string" },
+        { label: "Files", name: "files", widget: "list", fields: [
+          { label: "Title", name: "title", widget: "string" },
+          { label: "Body", name: "body", widget: "markdown" }
+        ]}
+      ]}
+  - name: "russianDocs"
+    label: "Russian Docs"
+    folder: "content/ru/docs"
+    create: true
+    nested: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Sub-Section", name: "sub_section", widget: "object", fields: [
+        { label: "Title", name: "title", widget: "string" },
+        { label: "Files", name: "files", widget: "list", fields: [
+          { label: "Title", name: "title", widget: "string" },
+          { label: "Body", name: "body", widget: "markdown" }
+        ]}
+      ]}
