@@ -10,7 +10,8 @@ collections:
     label: "English Docs"
     folder: "content/en/docs"
     create: true
-    nested: true
+    nested:
+      depth: 2
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
@@ -25,7 +26,8 @@ collections:
     label: "Russian Docs"
     folder: "content/ru/docs"
     create: true
-    nested: true
+    nested:
+      depth: 2
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
