@@ -11,7 +11,7 @@ collections:
     folder: "content/en/docs"
     create: true
     nested:
-      depth: 2
+      depth: 3
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
@@ -27,7 +27,7 @@ collections:
     folder: "content/ru/docs"
     create: true
     nested:
-      depth: 2
+      depth: 3
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
